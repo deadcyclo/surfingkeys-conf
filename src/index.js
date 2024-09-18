@@ -124,6 +124,10 @@ const main = async () => {
     const { maps, aliases = {} } = keys
     registerKeys(maps, aliases, conf.siteleader)
   }
+
+/* my own */
+    api.Hints.style('font-size:18px');
+/* end my own */
 }
 
 if (typeof window !== "undefined") {

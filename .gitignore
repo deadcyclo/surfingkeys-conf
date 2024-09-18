@@ -64,3 +64,8 @@ typings/
 # dotenv environment variables file
 .env
 worktree/
+
+# emacs autostore and backup files
+*~
+\#*\#
+/.#.*

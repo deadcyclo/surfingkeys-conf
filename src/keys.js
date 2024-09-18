@@ -49,12 +49,51 @@ const unmaps = {
 const maps = {}
 
 maps.global = [
+/* my own */
+  {
+    alias: "l",
+    map: "R",
+    category: categories.tabs,
+    description: "Go one tab right"
+  },
+  {
+    alias: "h",
+    map: "E",
+    category: categories.tabs,
+    description: "Go one tab left"
+  },
+  {
+    alias: "<Ctrl-x>o",
+    map: "R",
+    category: categories.tabs,
+    description: "Go one tab right"
+  },
+  {
+    alias: "<Ctrl-x>p",
+    map: "E",
+    category: categories.tabs,
+    description: "Go one tab left"
+  },
+  {
+    alias: "B",
+    map: "S",
+    category: categories.pageNav,
+    description: "Go back in history"
+  },
+  {
+    alias: "F",
+    map: "D",
+    category: categories.pageNav,
+    description: "Go forward in history"
+  },
+/* end of my own */
+/* my own commented out
   {
     alias: "F",
     map: "gf",
     category: categories.mouseClick,
     description: "Open a link in non-active new tab",
-  },
+  },*/
   {
     alias: "zf",
     category: categories.mouseClick,
@@ -278,12 +317,13 @@ maps.global = [
       actions.openLink(url, { newTab: true })
     },
   },
+/* my own commented out
   {
     alias: "F",
     map: "gf",
     category: categories.mouseClick,
     description: "Open a link in non-active new tab",
-  },
+  }, */
   {
     alias: "oh",
     category: categories.omnibar,
