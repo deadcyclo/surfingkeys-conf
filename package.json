@@ -20,7 +20,7 @@
     "chrome-extension",
     "configuration"
   ],
-  "author": "Maddison Hellstrom (https://github.com/b0o)",
+  "author": "Maddison Cohodas (https://github.com/b0o)",
   "contributors": [],
   "license": "MIT",
   "dependencies": {

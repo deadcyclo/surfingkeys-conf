@@ -881,4 +881,4 @@ You will need to modify it to contain the proper path to your `surfingkeys-conf`
 
 ## Copyright
 
-<p><h4>Author</h4>&copy; 2017-2025 <a href="https://github.com/b0o">Maddison Hellstrom</a></p><p><h4>License</h4>Released under the <a href="./LICENSE">MIT License</a></p>
+<p><h4>Author</h4>&copy; 2017-2025 <a href="https://github.com/b0o">Maddison Cohodas</a></p><p><h4>License</h4>Released under the <a href="./LICENSE">MIT License</a></p>
