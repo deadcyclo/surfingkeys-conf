@@ -1,6 +1,6 @@
 <!--{{NOTICE}}-->
 
-# Maddison's SurfingKeys Configuration
+# Maddison's SurfingKeys Configuration with my customisation
 
 This is my configuration for the [SurfingKeys](https://github.com/brookhong/Surfingkeys) browser extension.
 
