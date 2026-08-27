@@ -1,12 +1,12 @@
 <!-- NOTICE: This file is auto-generated. Do not edit directly. -->
 
-# Maddison's SurfingKeys Configuration
+# Maddison's SurfingKeys Configuration with my customisation
 
 This is my configuration for the [SurfingKeys](https://github.com/brookhong/Surfingkeys) browser extension.
 
 It includes:
 
-- [267 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
+- [271 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
 - [Omnibar integration with 55 Search Engines and Knowledge Sources](#omnibar-search-engine-integrations), many of which include **inline images** and **instant answers**.
 
 ## Table of Contents
@@ -24,7 +24,12 @@ It includes:
 <table>
 <tbody>
 <tr><th colspan="2"><strong>global</strong></th></tr><tr><td><strong>Mapping</strong></td><td><strong>Description</strong></td></tr>
-<tr><td><code>F</code></td><td>Open a link in non-active new tab</td></tr>
+<tr><td><code>l</code></td><td>Go one tab right</td></tr>
+<tr><td><code>h</code></td><td>Go one tab left</td></tr>
+<tr><td><code>&lt;Ctrl-x&gt;o</code></td><td>Go one tab right</td></tr>
+<tr><td><code>&lt;Ctrl-x&gt;p</code></td><td>Go one tab left</td></tr>
+<tr><td><code>B</code></td><td>Go back in history</td></tr>
+<tr><td><code>F</code></td><td>Go forward in history</td></tr>
 <tr><td><code>zf</code></td><td>Open link URL in vim editor</td></tr>
 <tr><td><code>w</code></td><td>Scroll up</td></tr>
 <tr><td><code>s</code></td><td>Scroll down</td></tr>
@@ -57,7 +62,6 @@ It includes:
 <tr><td><code>gxE</code></td><td>Close tab to left</td></tr>
 <tr><td><code>gxR</code></td><td>Close tab to right</td></tr>
 <tr><td><code>\cgh</code></td><td>Open clipboard string as GitHub path (e.g. 'torvalds/linux')</td></tr>
-<tr><td><code>F</code></td><td>Open a link in non-active new tab</td></tr>
 <tr><td><code>oh</code></td><td>Open URL from history</td></tr>
 <tr><th colspan="2"><a href="//algolia.com"><img src="./assets/favicons/algolia.com.ico" width="16px"> algolia.com</a></th></tr><tr><td><strong>Mapping</strong></td><td><strong>Description</strong></td></tr>
 <tr><td><code>&lt;Space&gt;a</code></td><td>Open search result</td></tr>
@@ -862,4 +866,4 @@ You will need to modify it to contain the proper path to your `surfingkeys-conf`
 
 ## Copyright
 
-<p><h4>Author</h4>&copy; 2017-2024 <a href="https://github.com/b0o">Maddison Hellstrom</a></p><p><h4>License</h4>Released under the <a href="./LICENSE">MIT License</a></p>
+<p><h4>Author</h4>&copy; 2017-2026 <a href="https://github.com/b0o">Maddison Hellstrom</a></p><p><h4>License</h4>Released under the <a href="./LICENSE">MIT License</a></p>

@@ -10,6 +10,10 @@ export default {
     richHintsForKeystroke: 1,
     defaultSearchEngine: "dd",
     stealFocusOnLoad: false,
+    focusFirstCandidate: true,
+    tabsThreshold:  0,
+    tabsMRUOrder:  true,
+    omnibarSuggestion: true,
     theme,
   },
 
@@ -24,8 +28,8 @@ export default {
 
   // Array containing zero or more log levels to enable: log, warn, error
   logLevels: [
-    // "log",
-    // "warn",
+    "log",
+    "warn",
     "error",
   ],
 }

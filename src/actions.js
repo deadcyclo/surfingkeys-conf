@@ -143,7 +143,7 @@ actions.getSummaryUrl = ({ href = window.location.href } = {}) =>
 //       prompt:  "AWS",
 //       onInput: console.log,
 //     },
-//   })
+//   })})
 // }
 
 // Surfingkeys-specific actions
@@ -168,13 +168,13 @@ actions.editSettings = () =>
   tabOpenLink(chrome.extension.getURL("/pages/options.html"))
 
 actions.togglePdfViewer = () =>
-  chrome.storage.local.get("noPdfViewer", (resp) => {
+  settings.get("noPdfViewer", (resp) => {
     if (!resp.noPdfViewer) {
-      chrome.storage.local.set({ noPdfViewer: 1 }, () => {
+      settings.set({ noPdfViewer: 1 }, () => {
         Front.showBanner("PDF viewer disabled.")
       })
     } else {
-      chrome.storage.local.remove("noPdfViewer", () => {
+      settings.remove("noPdfViewer", () => {
         Front.showBanner("PDF viewer enabled.")
       })
     }

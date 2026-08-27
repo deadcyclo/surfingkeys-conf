@@ -41,6 +41,12 @@ const unmaps = {
     "<Ctrl-j>",
     "<Ctrl-h>",
   ],
+  vmappings: [
+    "<Ctrl-d>"
+  ],
+  imappings: [
+    "<Ctrl-f>"
+  ],
   searchAliases: {
     s: ["g", "d", "b", "e", "w", "s", "h", "y"],
   },

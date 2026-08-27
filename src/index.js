@@ -7,6 +7,8 @@ const {
   mapkey,
   map,
   unmap,
+  vunmap,
+  iunmap,
   Clipboard,
   Front,
   removeSearchAlias,
@@ -98,9 +100,7 @@ const main = async () => {
   }
 
   if (conf.logLevels) {
-    await chrome.storage.local.set({
-      logLevels: conf.logLevels,
-    })
+    window.localStorage.setItem('logLevels', conf.logLevels)
   }
 
   if (conf.keys && conf.keys.unmaps) {
@@ -112,6 +112,12 @@ const main = async () => {
       Object.entries(unmaps.searchAliases).forEach(([leader, items]) => {
         items.forEach((v) => removeSearchAlias(v, leader))
       })
+    }
+    if (unmaps.vmappings) {
+      unmaps.vmappings.forEach((m) => vunmap(m))
+    }
+    if (unmaps.imappings) {
+      unmaps.imappings.forEach((m) => iunmap(m))
     }
   }
 

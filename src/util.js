@@ -65,35 +65,24 @@ util.until = (check, test = (a) => a, maxAttempts = 50, interval = 50) =>
     f()
   })
 
-const localStorageFns = () => {
-  if (typeof browser !== "undefined") {
-    return [browser.storage.local.get, browser.storage.local.set]
-  }
-  if (typeof chrome !== "undefined") {
-    return [chrome.storage.local.get, chrome.storage.local.set].map((fn) =>
-      util.promisify(fn.bind(chrome.storage.local))
-    )
-  }
-  const fn = () =>
-    new Error("local storage unavailable: unsupported environment")
-  return [fn, fn]
-}
-
-const [localStorageGet, localStorageSet] = localStorageFns()
-
 util.localStorage = {}
 
 util.localStorage.fullkey = (key) => `surfingkeys-conf.${key}`
 
 util.localStorage.get = async (key) => {
   const fullkey = util.localStorage.fullkey(key)
-  return (await localStorageGet(fullkey))[fullkey]
+  if (typeof window === "undefined" || !window.localStorage) {
+    throw new Error("local storage unavailable: unsupported environment")
+  }
+  return window.localStorage.getItem(fullkey)
 }
 
 util.localStorage.set = async (key, val) => {
   const fullkey = util.localStorage.fullkey(key)
-  const storageObj = { [fullkey]: val }
-  return localStorageSet(storageObj)
+  if (typeof window === "undefined" || !window.localStorage) {
+    throw new Error("local storage unavailable: unsupported environment")
+  }
+  window.localStorage.setItem(fullkey, val)
 }
 
 util.htmlUnsafe = (content) => html.node([content])
