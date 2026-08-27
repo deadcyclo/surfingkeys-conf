@@ -64,6 +64,6 @@ Please, only open an issue for actual bugs relating to the code published here.
 License
 -------
 
-&copy; 2018-2022 Maddison Hellstrom
+&copy; 2018-2022 Maddison Cohodas
 
 MIT License

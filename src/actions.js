@@ -143,7 +143,7 @@ actions.getSummaryUrl = ({ href = window.location.href } = {}) =>
 //       prompt:  "AWS",
 //       onInput: console.log,
 //     },
-//   })})
+//   })
 // }
 
 // Surfingkeys-specific actions
@@ -167,18 +167,20 @@ actions.openLink = (url, { newTab = false, active = true } = {}) => {
 actions.editSettings = () =>
   tabOpenLink(chrome.extension.getURL("/pages/options.html"))
 
-actions.togglePdfViewer = () =>
-  settings.get("noPdfViewer", (resp) => {
-    if (!resp.noPdfViewer) {
-      settings.set({ noPdfViewer: 1 }, () => {
-        Front.showBanner("PDF viewer disabled.")
-      })
-    } else {
-      settings.remove("noPdfViewer", () => {
-        Front.showBanner("PDF viewer enabled.")
-      })
-    }
-  })
+actions.togglePdfViewer = () => {
+  RUNTIME('getSettings', {
+      key: 'noPdfViewer'
+  }, function(resp) {
+      const info = resp.settings.noPdfViewer ? "PDF viewer enabled." : "PDF viewer disabled.";
+      RUNTIME('updateSettings', {
+          settings: {
+              "noPdfViewer": !resp.settings.noPdfViewer
+          }
+      }, (r) => {
+          Front.showBanner(info)
+      });
+  });
+}
 
 actions.previewLink = () =>
   util.createHints("a[href]", (a) =>
@@ -1233,30 +1235,5 @@ actions.doi.getLink = (provider) => {
   }
   return priv.doi_handler(doi)
 }
-
-// ChatGPT
-actions.cg = {}
-actions.cg.getNewChatLink = () =>
-  [...document.querySelectorAll("a")].find((a) => a.innerText === "New chat")
-
-actions.cg.newChat = async () => {
-  const clickNewChat = async (newChatLink) => {
-    newChatLink.click()
-    const gpt4LinkQuery = () => [...document.querySelectorAll('li[class*="group/toggle"]')].find((li) => li.innerText === "GPT-4")
-    return await util.until(gpt4LinkQuery)
-  }
-
-  const a = actions.cg.getNewChatLink()
-  if (a) {
-    const gpt4Link = await clickNewChat(a)
-    gpt4Link.querySelector("button>div").click()
-    return
-  }
-
-  location.assign("https://chat.openai.com/?model=gpt-4")
-}
-
-actions.cg.getChatLinks = () =>
-  actions.cg.getNewChatLink().parentElement.nextSibling.nextSibling.querySelectorAll("a")
 
 export default actions
