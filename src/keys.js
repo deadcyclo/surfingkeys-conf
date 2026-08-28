@@ -315,7 +315,7 @@ maps.global = [
     description: "Save Image",
     callback: () =>
       util.createHints("img", (img) =>
-        util.runtime("download", { url: img.src }),
+        util.runtime("download", { url: util.getHighestResImg(img) }),
       ),
   },
   {
@@ -324,7 +324,7 @@ maps.global = [
     description: "Save Image As",
     callback: () =>
       util.createHints("img[src]", (img) =>
-        util.runtime("download", { url: img.src, saveAs: true }),
+        util.runtime("download", { url: util.getHighestResImg(img), saveAs: true }),
       ),
   },
   {

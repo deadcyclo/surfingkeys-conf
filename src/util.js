@@ -20,6 +20,28 @@ util.promisify = promisify
 const runtime = promisify(RUNTIME)
 util.runtime = runtime
 
+util.absolutePath = (href) => {
+  return new URL(href, document.baseURI).href
+}
+
+util.getHighestResImg = (element) => {
+  const srcset = element.getAttribute("srcset")
+  if (srcset) {
+    const highestRes = srcset.split(",").reduce(
+      (acc, item) => {
+        const [url, widthDescriptor = "0w"] = item.trim().split(/\s+/, 2)
+        const width = Number.parseInt(widthDescriptor, 10)
+        if (width > acc.width) return { width, url }
+        return acc
+      },
+      { width: 0, url: "" }
+    )
+    if (highestRes.url) return util.absolutePath(highestRes.url)
+  }
+
+  return util.absolutePath(element.getAttribute("src"))
+}
+
 util.runtimeHttpRequest = async (url, opts) => {
   const res = await runtime("request", { ...opts, url })
   return res.text
