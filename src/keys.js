@@ -103,12 +103,12 @@ maps.global = [
     category: categories.scroll,
     description: "Scroll up",
   },
-  {
+  /*{
     alias: "s",
     map: "j",
     category: categories.scroll,
     description: "Scroll down",
-  },
+  },*/
   {
     alias: "K",
     map: "e",
@@ -308,6 +308,24 @@ maps.global = [
       Front.showBanner(`Open ${url}`)
       actions.openLink(url, { newTab: true })
     },
+  },
+  {
+    alias: "si",
+    category: categories.mouseClick,
+    description: "Save Image",
+    callback: () =>
+      util.createHints("img", (img) =>
+        util.runtime("download", { url: img.src }),
+      ),
+  },
+  {
+    alias: "sa",
+    category: categories.mouseClick,
+    description: "Save Image As",
+    callback: () =>
+      util.createHints("img[src]", (img) =>
+        util.runtime("download", { url: img.src, saveAs: true }),
+      ),
   },
   {
     alias: "gv",
