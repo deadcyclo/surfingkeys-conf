@@ -136,8 +136,16 @@ maps.global = [
   {
     alias: "gI",
     category: categories.pageNav,
-    description: "View image in new tab",
-    callback: () => util.createHints("img", (i) => actions.openLink(i.src)),
+    description: "View image in new tab (highest res)",
+    callback: () => util.createHints("img[src]", (img) =>
+      actions.openLink(util.getHighestResImg(img), { newTab: true, active: false })),
+  },
+  {
+    alias: "yw",
+    category: categories.pageNav,
+    description: "View image in new tab active (highest res)",
+    callback: () => util.createHints("img[src]", (img) =>
+      actions.openLink(util.getHighestResImg(img), { newTab: true, active: true })),
   },
   {
     alias: "g.",
@@ -312,7 +320,7 @@ maps.global = [
   {
     alias: "si",
     category: categories.mouseClick,
-    description: "Save Image",
+    description: "Save Image (highest res)",
     callback: () =>
       util.createHints("img", (img) =>
         util.runtime("download", { url: util.getHighestResImg(img) }),
@@ -321,10 +329,19 @@ maps.global = [
   {
     alias: "sa",
     category: categories.mouseClick,
-    description: "Save Image As",
+    description: "Save Image As (highest res)",
     callback: () =>
       util.createHints("img[src]", (img) =>
         util.runtime("download", { url: util.getHighestResImg(img), saveAs: true }),
+      ),
+  },
+  {
+    alias: "ye",
+    category: categories.clipboard,
+    description: "Copy source URL of an image (highest res)",
+    callback: () =>
+      util.createHints("img[src]", (img) =>
+        Clipboard.write(util.getHighestResImg(img)),
       ),
   },
   {
