@@ -55,7 +55,6 @@ const unmaps = {
 const maps = {}
 
 maps.global = [
-/* my own */
   {
     alias: "l",
     map: "R",
@@ -92,14 +91,6 @@ maps.global = [
     category: categories.pageNav,
     description: "Go forward in history"
   },
-/* end of my own */
-/* my own commented out
-  {
-    alias: "F",
-    map: "gf",
-    category: categories.mouseClick,
-    description: "Open a link in non-active new tab",
-  },*/
   {
     alias: "zf",
     category: categories.mouseClick,
@@ -318,13 +309,15 @@ maps.global = [
       actions.openLink(url, { newTab: true })
     },
   },
-/* my own commented out
   {
-    alias: "F",
-    map: "gf",
+    alias: "gv",
     category: categories.mouseClick,
     description: "Open a link in non-active new tab",
-  }, */
+    callback: () =>
+      util.createHints("a[href]", (a) =>
+          actions.openLink(a.href, { newTab: true, active: true }),
+      ),
+  },
   {
     alias: "oh",
     category: categories.omnibar,
