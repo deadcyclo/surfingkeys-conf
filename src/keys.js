@@ -32,7 +32,7 @@ const unmaps = {
     "zR",
     "ab",
     "Q",
-    "q",
+//    "q",
     "ag",
     "af",
     ";s",
@@ -352,6 +352,30 @@ maps.global = [
       util.createHints("a[href]", (a) =>
           actions.openLink(a.href, { newTab: true, active: true }),
       ),
+  },
+  {
+    alias: "gv",
+    category: categories.mouseClick,
+    description: "Open a link in non-active new tab",
+    callback: () =>
+      util.createHints("a[href]", (a) =>
+        actions.openLink(a.href, { newTab: true, active: true }),
+      ),
+  },
+  {
+    alias: "sd",
+    category: categories.mouseClick,
+    description: "Mouse over expandables",
+    callback: () =>
+      util.createHints('select, button[aria-expanded="false"], a[aria-expanded="false"], a[aria-haspopup="true"], button[aria-haspopup="true"]',
+        Hints.dispatchMouseClick, {mouseEvents: ['mouseover']}),
+  },
+  {
+    alias: "se",
+    category: categories.mouseClick,
+    description: "Click expandables",
+    callback: () =>
+      util.createHints('select, button[aria-expanded="false"], a[aria-expanded="false"], a[aria-haspopup="true"], button[aria-haspopup="true"]'),
   },
   {
     alias: "oh",
