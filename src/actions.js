@@ -8,8 +8,53 @@ const { tabOpenLink, Front, Hints, Normal, RUNTIME, Clipboard } = api
 
 const actions = {}
 
+/* pinboard.in - my own */
+var REGEX_SAVE_URL = /^http[s]?\:\/\/pinboard\.in\/add/;
+var BASE_URL = 'https://pinboard.in';
+
 // Globally applicable actions
 // ===========================
+
+actions.saveToPinboardPopup = ({ url, title, description = "" } = {}) => {
+  const pinboardUrl = `${BASE_URL}/add?`
+  const fullUrl = `${pinboardUrl}showtags=yes&url=${encodeURIComponent(
+    url
+  )}&description=${encodeURIComponent(description)}&title=${encodeURIComponent(
+    title
+  )}`
+
+  window.open(
+    fullUrl,
+    "Pinboard",
+    "toolbar=no,scrollbars=yes,width=750,height=700"
+  )
+}
+
+actions.saveToPinboard = () => {
+  actions.saveToPinboardPopup({
+    url: window.location.href,
+    title: document.title,
+    description: window.getSelection().toString()});
+};
+
+actions.readLaterPinboard = () => {
+  var readlater = window.open(
+    BASE_URL + '/add?later=yes&noui=yes&jump=close&url=' +
+    encodeURIComponent(window.location.href) + '&title=' +
+    encodeURIComponent(document.title), 'Pinboard',
+    'toolbar=no');
+
+  readlater.resizeTo(0, 0);
+  readlater.blur();
+};
+
+actions.unreadBookmarksPinboard = () => {
+  window.open(BASE_URL + '/toread/', '_blank');
+};
+
+actions.allBookmarksPinboard = () => {
+  window.open(BASE_URL, '_blank');
+};
 
 actions.moveTabNextToTab = (targetId, nextTo, leftOf = false) =>
   browser.tabs.move(targetId, {

@@ -6,7 +6,7 @@ This is my configuration for the [SurfingKeys](https://github.com/brookhong/Surf
 
 It includes:
 
-- [269 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
+- [280 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
 - [Omnibar integration with 58 Search Engines and Knowledge Sources](#omnibar-search-engine-integrations), many of which include **inline images** and **instant answers**.
 
 ## Table of Contents
@@ -24,6 +24,10 @@ It includes:
 <table>
 <tbody>
 <tr><th colspan="2"><strong>global</strong></th></tr><tr><td><strong>Mapping</strong></td><td><strong>Description</strong></td></tr>
+<tr><td><code>&lt;Ctrl-d&gt;d</code></td><td>Bookmark current page to pinboard.in</td></tr>
+<tr><td><code>&lt;Ctrl-d&gt;&lt;Ctrl-d&gt;</code></td><td>Bookmark current page as read later to pinboard.in</td></tr>
+<tr><td><code>&lt;Ctrl-d&gt;a</code></td><td>Show pinboard.in bookmarks in new tab</td></tr>
+<tr><td><code>&lt;Ctrl-d&gt;r</code></td><td>Show pinboard.in read later bookmarks  in new tab</td></tr>
 <tr><td><code>l</code></td><td>Go one tab right</td></tr>
 <tr><td><code>h</code></td><td>Go one tab left</td></tr>
 <tr><td><code>&lt;Ctrl-x&gt;o</code></td><td>Go one tab right</td></tr>
@@ -32,12 +36,12 @@ It includes:
 <tr><td><code>F</code></td><td>Go forward in history</td></tr>
 <tr><td><code>zf</code></td><td>Open link URL in vim editor</td></tr>
 <tr><td><code>w</code></td><td>Scroll up</td></tr>
-<tr><td><code>s</code></td><td>Scroll down</td></tr>
 <tr><td><code>K</code></td><td>Scroll half page up</td></tr>
 <tr><td><code>J</code></td><td>Scroll half page down</td></tr>
 <tr><td><code>gh</code></td><td>Scroll to element targeted by URL hash</td></tr>
 <tr><td><code>gi</code></td><td>Edit current URL with vim editor</td></tr>
-<tr><td><code>gI</code></td><td>View image in new tab</td></tr>
+<tr><td><code>gI</code></td><td>View image in new tab (highest res)</td></tr>
+<tr><td><code>yw</code></td><td>View image in new tab active (highest res)</td></tr>
 <tr><td><code>g.</code></td><td>Go to parent domain</td></tr>
 <tr><td><code>yp</code></td><td>Copy URL path of current page</td></tr>
 <tr><td><code>yI</code></td><td>Copy Image URL</td></tr>
@@ -61,6 +65,13 @@ It includes:
 <tr><td><code>gxE</code></td><td>Close tab to left</td></tr>
 <tr><td><code>gxR</code></td><td>Close tab to right</td></tr>
 <tr><td><code>\cgh</code></td><td>Open clipboard string as GitHub path (e.g. 'torvalds/linux')</td></tr>
+<tr><td><code>si</code></td><td>Save Image (highest res)</td></tr>
+<tr><td><code>sa</code></td><td>Save Image As (highest res)</td></tr>
+<tr><td><code>ye</code></td><td>Copy source URL of an image (highest res)</td></tr>
+<tr><td><code>gv</code></td><td>Open a link in non-active new tab</td></tr>
+<tr><td><code>gv</code></td><td>Open a link in non-active new tab</td></tr>
+<tr><td><code>sd</code></td><td>Mouse over expandables</td></tr>
+<tr><td><code>se</code></td><td>Click expandables</td></tr>
 <tr><td><code>oh</code></td><td>Open URL from history</td></tr>
 <tr><th colspan="2"><a href="//algolia.com"><img src="./assets/favicons/algolia.com.ico" width="16px"> algolia.com</a></th></tr><tr><td><strong>Mapping</strong></td><td><strong>Description</strong></td></tr>
 <tr><td><code>&lt;Space&gt;a</code></td><td>Open search result</td></tr>

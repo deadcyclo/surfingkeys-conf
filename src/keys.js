@@ -56,6 +56,30 @@ const maps = {}
 
 maps.global = [
   {
+    alias: "<Ctrl-d>d",
+    category: categories.misc,
+    description: "Bookmark current page to pinboard.in",
+    callback: actions.saveToPinboard,
+  },
+  {
+    alias: "<Ctrl-d><Ctrl-d>",
+    category: categories.misc,
+    description: "Bookmark current page as read later to pinboard.in",
+    callback: actions.readLaterPinboard,
+  },
+  {
+    alias: "<Ctrl-d>a",
+    category: categories.misc,
+    description: "Show pinboard.in bookmarks in new tab",
+    callback: actions.allBookmarksPinboard,
+  },
+  {
+    alias: "<Ctrl-d>r",
+    category: categories.misc,
+    description: "Show pinboard.in read later bookmarks  in new tab",
+    callback: actions.unreadBookmarksPinboard,
+  },
+  {
     alias: "l",
     map: "R",
     category: categories.tabs,
