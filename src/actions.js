@@ -9,11 +9,26 @@ const { tabOpenLink, Front, Hints, Normal, RUNTIME, Clipboard } = api
 const actions = {}
 
 /* pinboard.in - my own */
-var REGEX_SAVE_URL = /^http[s]?\:\/\/pinboard\.in\/add/;
-var BASE_URL = 'https://pinboard.in';
+var REGEX_SAVE_URL = /^http[s]?\:\/\/pinboard\.in\/add/
+var BASE_URL = "https://pinboard.in"
 
 // Globally applicable actions
 // ===========================
+
+actions.saveToOrgroam = () => {
+  const selection = window.getSelection().toString()
+  const template = encodeURIComponent(selection).length > 0 ? "p" : "u"
+
+  let url = `org-protocol://roam-ref?template=${template}&ref=${encodeURIComponent(
+    window.location.href
+  )}&title=${encodeURIComponent(document.title)}`
+
+  if (template === "p") {
+    url += `&body=${encodeURIComponent(selection)}`
+  }
+
+  window.location = url
+}
 
 actions.saveToPinboardPopup = ({ url, title, description = "" } = {}) => {
   const pinboardUrl = `${BASE_URL}/add?`
@@ -30,31 +45,30 @@ actions.saveToPinboardPopup = ({ url, title, description = "" } = {}) => {
   )
 }
 
-actions.saveToPinboard = () => {
+actions.saveToPinboard = () =>
   actions.saveToPinboardPopup({
     url: window.location.href,
     title: document.title,
-    description: window.getSelection().toString()});
-};
+    description: window.getSelection().toString(),
+  })
 
 actions.readLaterPinboard = () => {
-  var readlater = window.open(
-    BASE_URL + '/add?later=yes&noui=yes&jump=close&url=' +
-    encodeURIComponent(window.location.href) + '&title=' +
-    encodeURIComponent(document.title), 'Pinboard',
-    'toolbar=no');
+  const readLaterUrl = `${BASE_URL}/add?later=yes&noui=yes&jump=close&url=${encodeURIComponent(
+    window.location.href
+  )}&title=${encodeURIComponent(document.title)}`
 
-  readlater.resizeTo(0, 0);
-  readlater.blur();
-};
+  const readLater = window.open(readLaterUrl, "Pinboard", "toolbar=no")
+  readLater.resizeTo(0, 0)
+  readLater.blur()
+}
 
 actions.unreadBookmarksPinboard = () => {
-  window.open(BASE_URL + '/toread/', '_blank');
-};
+  window.open(`${BASE_URL}/toread/`, "_blank")
+}
 
 actions.allBookmarksPinboard = () => {
-  window.open(BASE_URL, '_blank');
-};
+  window.open(BASE_URL, "_blank")
+}
 
 actions.moveTabNextToTab = (targetId, nextTo, leftOf = false) =>
   browser.tabs.move(targetId, {

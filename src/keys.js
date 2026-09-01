@@ -56,6 +56,12 @@ const maps = {}
 
 maps.global = [
   {
+    alias: "<Ctrl-d>c",
+    category: categories.misc,
+    description: "Send current page to org-roam in emacsclient",
+    callback: actions.saveToOrgroam,
+  },
+  {
     alias: "<Ctrl-d>d",
     category: categories.misc,
     description: "Bookmark current page to pinboard.in",

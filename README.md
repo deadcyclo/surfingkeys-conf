@@ -6,7 +6,7 @@ This is my configuration for the [SurfingKeys](https://github.com/brookhong/Surf
 
 It includes:
 
-- [280 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
+- [281 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
 - [Omnibar integration with 58 Search Engines and Knowledge Sources](#omnibar-search-engine-integrations), many of which include **inline images** and **instant answers**.
 
 ## Table of Contents
@@ -24,6 +24,7 @@ It includes:
 <table>
 <tbody>
 <tr><th colspan="2"><strong>global</strong></th></tr><tr><td><strong>Mapping</strong></td><td><strong>Description</strong></td></tr>
+<tr><td><code>&lt;Ctrl-d&gt;c</code></td><td>Send current page to org-roam in emacsclient</td></tr>
 <tr><td><code>&lt;Ctrl-d&gt;d</code></td><td>Bookmark current page to pinboard.in</td></tr>
 <tr><td><code>&lt;Ctrl-d&gt;&lt;Ctrl-d&gt;</code></td><td>Bookmark current page as read later to pinboard.in</td></tr>
 <tr><td><code>&lt;Ctrl-d&gt;a</code></td><td>Show pinboard.in bookmarks in new tab</td></tr>
