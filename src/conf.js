@@ -17,6 +17,12 @@ export default {
     focusFirstCandidate: true,
     enableEmojiInsertion: true,
     startToShowEmoji: true,
+    defaultLLMProvider: "ollama",
+    llm: {
+      ollama: {
+        model: 'huihui_ai/qwen3-vl-abliterated:latest',
+      }
+    },
 //    aceKeybindings: "emacs", need to see if we can override stuff in vivaldi keybindi ngs first
     theme,
   },
