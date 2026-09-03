@@ -54,6 +54,58 @@ const googleCustomSearch = (opts) => {
   }
 }
 
+const parsePinboardSearchResponse = (response) => {
+  const wrapper = document.createElement("div")
+  wrapper.innerHTML = `<div>${response.text}</div>`
+
+  if (!wrapper.querySelector(".banner_username")) {
+    window.Front?.showPopup(
+      "You need to log on to pinboard.in before using this search",
+    )
+  }
+
+  return [...(wrapper.querySelector("#bookmarks")?.children ?? [])]
+    .filter(
+      (el) =>
+        el.tagName.toLowerCase() === "div"
+        && el.id !== "bulk_links"
+        && !el.hasAttribute("style"),
+    )
+    .map((el) => {
+      const titleEl = el.querySelector(".display .bookmark_title")
+      const descriptionEl = el.querySelector(".description")
+      const tags = [...el.querySelectorAll(".tag")]
+        .map((tag) => ` ${tag.innerHTML}`)
+        .join("")
+
+      return {
+        title:       titleEl?.innerHTML ?? "",
+        url:         titleEl?.getAttribute("href") ?? null,
+        date:        el.querySelector(".when")?.innerHTML ?? "",
+        description: descriptionEl?.innerHTML ?? "",
+        tags,
+      }
+    })
+}
+
+completions.pi = {
+  alias:    'pi',
+  name:     'pinboard',
+  search:   'https://pinboard.in/search/u:deadcyclo?query=',
+  compl:    'https://pinboard.in/search/u:deadcyclo?query=',
+}
+
+completions.pi.callback = parsePinboardSearchResponse
+
+completions.pf = {
+  alias:    'pf',
+  name:     'pinboard fulltext',
+  search:   'https://pinboard.in/search/u:deadcyclo?fulltext=on&query=',
+  compl:    'https://pinboard.in/search/u:deadcyclo?fulltext=on&query=',
+}
+
+completions.pf.callback = completions.pi.callback
+
 // ****** Arch Linux ****** //
 
 // Arch Linux official repos

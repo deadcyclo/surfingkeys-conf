@@ -7,7 +7,7 @@ This is my configuration for the [SurfingKeys](https://github.com/brookhong/Surf
 It includes:
 
 - [281 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
-- [Omnibar integration with 58 Search Engines and Knowledge Sources](#omnibar-search-engine-integrations), many of which include **inline images** and **instant answers**.
+- [Omnibar integration with 60 Search Engines and Knowledge Sources](#omnibar-search-engine-integrations), many of which include **inline images** and **instant answers**.
 
 ## Table of Contents
 
@@ -566,6 +566,20 @@ For example, to open the Wikipedia omnibar integration, type `awp`.
     <td><code>ow</code></td>
     <td>owasp</td>
     <td><a href="https://www.owasp.org">www.owasp.org</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://pinboard.in"></a></td>
+    <td><code>pf</code></td>
+    <td>pinboard fulltext</td>
+    <td><a href="https://pinboard.in">pinboard.in</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://pinboard.in"></a></td>
+    <td><code>pi</code></td>
+    <td>pinboard</td>
+    <td><a href="https://pinboard.in">pinboard.in</a></td>
     <td></td>
   </tr>
   <tr>
