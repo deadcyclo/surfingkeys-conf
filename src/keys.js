@@ -86,10 +86,20 @@ maps.global = [
     callback: actions.unreadBookmarksPinboard,
   },
   {
+    alias: "<Ctrl-x>b",
+    map: "T",
+    category: categories.tabs,
+    description: "Choose a tab"
+  },
+  {
     alias: "l",
     map: "R",
     category: categories.tabs,
     description: "Go one tab right"
+  },
+  {
+    alias: "<Ctrl-g>",
+    map: "<Esc>"
   },
   {
     alias: "h",
@@ -108,6 +118,18 @@ maps.global = [
     map: "E",
     category: categories.tabs,
     description: "Go one tab left"
+  },
+  {
+    alias: "<Ctrl-s>",
+    map: "/",
+    category: categories.visualMode,
+    description: "Find in current page"
+  },
+  {
+    alias: "<Ctrl-x>k",
+    map: "x",
+    category: categories.tabs,
+    description: "Find in current page"
   },
   {
     alias: "B",

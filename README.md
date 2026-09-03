@@ -6,7 +6,7 @@ This is my configuration for the [SurfingKeys](https://github.com/brookhong/Surf
 
 It includes:
 
-- [281 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
+- [285 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
 - [Omnibar integration with 60 Search Engines and Knowledge Sources](#omnibar-search-engine-integrations), many of which include **inline images** and **instant answers**.
 
 ## Table of Contents
@@ -29,10 +29,14 @@ It includes:
 <tr><td><code>&lt;Ctrl-d&gt;&lt;Ctrl-d&gt;</code></td><td>Bookmark current page as read later to pinboard.in</td></tr>
 <tr><td><code>&lt;Ctrl-d&gt;a</code></td><td>Show pinboard.in bookmarks in new tab</td></tr>
 <tr><td><code>&lt;Ctrl-d&gt;r</code></td><td>Show pinboard.in read later bookmarks  in new tab</td></tr>
+<tr><td><code>&lt;Ctrl-x&gt;b</code></td><td>Choose a tab</td></tr>
 <tr><td><code>l</code></td><td>Go one tab right</td></tr>
+<tr><td><code>&lt;Ctrl-g&gt;</code></td><td>undefined</td></tr>
 <tr><td><code>h</code></td><td>Go one tab left</td></tr>
 <tr><td><code>&lt;Ctrl-x&gt;o</code></td><td>Go one tab right</td></tr>
 <tr><td><code>&lt;Ctrl-x&gt;p</code></td><td>Go one tab left</td></tr>
+<tr><td><code>&lt;Ctrl-s&gt;</code></td><td>Find in current page</td></tr>
+<tr><td><code>&lt;Ctrl-x&gt;k</code></td><td>Find in current page</td></tr>
 <tr><td><code>B</code></td><td>Go back in history</td></tr>
 <tr><td><code>F</code></td><td>Go forward in history</td></tr>
 <tr><td><code>zf</code></td><td>Open link URL in vim editor</td></tr>

@@ -8,6 +8,7 @@ const {
   map,
   unmap,
   vunmap,
+  vmap,
   iunmap,
   Clipboard,
   Front,
@@ -36,7 +37,10 @@ const registerKey = (domain, mapObj, siteleader) => {
   const fullDescription = `#${category} ${description}`
 
   try {
-    if (typeof mapObj.map !== "undefined") {
+    if (typeof mapObj.vmap !== "undefined") {
+      vmap(alias, mapObj.map)
+    }
+    else if (typeof mapObj.map !== "undefined") {
       map(alias, mapObj.map)
     } else {
       mapkey(key, fullDescription, callback, opts) // t, n, r, o
