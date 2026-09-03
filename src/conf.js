@@ -8,13 +8,16 @@ export default {
     hintCharacters: "qwertasdfgzxcvb",
     omnibarSuggestionTimeout: 500,
     richHintsForKeystroke: 1,
-    defaultSearchEngine: "ka",
+    defaultSearchEngine: "go",
     stealFocusOnLoad: false,
     focusFirstCandidate: true,
     tabsThreshold:  0,
     tabsMRUOrder:  true,
     omnibarSuggestion: true,
-//    aceKeybindings: "emacs", need to see if we can override stuff in vivaldi keybindings first
+    focusFirstCandidate: true,
+    enableEmojiInsertion: true,
+    startToShowEmoji: true,
+//    aceKeybindings: "emacs", need to see if we can override stuff in vivaldi keybindi ngs first
     theme,
   },
 
