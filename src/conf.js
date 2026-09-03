@@ -14,6 +14,7 @@ export default {
     tabsThreshold:  0,
     tabsMRUOrder:  true,
     omnibarSuggestion: true,
+//    aceKeybindings: "emacs", need to see if we can override stuff in vivaldi keybindings first
     theme,
   },
 
